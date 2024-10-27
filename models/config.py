@@ -1,4 +1,5 @@
 from typing import Literal
+from typing import Optional
 
 from better_proxy import Proxy
 from pydantic import BaseModel, PositiveInt, ConfigDict
@@ -10,7 +11,7 @@ class Account(BaseModel):
     email: str
     password: str
     imap_server: str = ""
-    proxy: Proxy
+    proxy: Optional[Proxy] = None
 
 
 class Config(BaseModel):
